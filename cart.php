@@ -20,11 +20,17 @@
                     foreach ($panier as $cookieName){
                         $cookie = $catalog[$cookieName]; 
                         ?>
+                    
                 <tr>
+                    <td><?= $count ?></td>
                     <td><?= $cookie['name'] ?></td>
                     <td><?= $cookie['description'] ?></td>
+                    
                 </tr>
-                    <?php } ?>
+                    <?php 
+                $count++;
+                }
+                 ?>
         </table> 
     </div>
 </section>
