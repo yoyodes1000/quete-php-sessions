@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php require 'inc/data/products.php'; ?>
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
@@ -19,3 +20,15 @@
     </div>
 </section>
 <?php require 'inc/foot.php'; ?>
+
+<?php 
+
+if (isset($_GET['add_to_cart'])){
+    $cookieName = $_GET['add_to_cart'];
+
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }
+
+    $_SESSION['cart'][] = $cookieName;
+}
